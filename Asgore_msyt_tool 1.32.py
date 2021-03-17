@@ -1,13 +1,11 @@
-import re
-import openpyxl
-import keyboard
+import re, openpyxl, keyboard
 from sys import argv, exit
 from os import path
 from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTextEdit, QPushButton, QLabel
 
 database = 'TextTable.xlsx'
-file_path = input('Enter a .msyt file: ')
+file_path = input('Enter a msyt file. ')
 file_content = open(file_path, 'r', encoding='utf-8').read()
 
 if path.exists(database):
@@ -43,7 +41,7 @@ save_button.setGeometry(QtCore.QRect(105, 145, 93, 40))
 save_button.setText("حفظ الملف")
 
 per = QLabel(MainWindow)
-per.setGeometry(QtCore.QRect(13, 145, 200, 40))
+per.setGeometry(QtCore.QRect(13, 145, 90, 40))
 per.setFont(label_font)
 
 def MsytToTxt(file_content):
